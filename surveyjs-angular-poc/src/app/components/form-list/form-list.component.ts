@@ -20,7 +20,7 @@ export class FormListComponent implements OnInit {
   ];
 
   constructor(
-    private formService: FormService,
+    public formService: FormService,
     private router: Router
   ) {}
 

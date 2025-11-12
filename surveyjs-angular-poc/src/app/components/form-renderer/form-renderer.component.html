@@ -16,8 +16,10 @@
     {{ error }}
   </div>
 
-  <div *ngIf="!isLoading && !error && !isSubmitted" class="form-wrapper">
-    <div #surveyContainer class="survey-container"></div>
+  <div *ngIf="!isLoading && !error && !isSubmitted && survey" class="form-wrapper">
+    <div class="survey-container">
+      <survey [model]="survey"></survey>
+    </div>
   </div>
 
   <div *ngIf="isSubmitted" class="success-message">

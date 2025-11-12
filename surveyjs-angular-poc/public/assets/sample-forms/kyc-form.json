@@ -1,0 +1,312 @@
+{
+  "title": {
+    "default": "KYC Verification Form",
+    "vi": "Mẫu xác minh KYC"
+  },
+  "description": {
+    "default": "Know Your Customer (KYC) verification form",
+    "vi": "Mẫu xác minh Biết khách hàng của bạn (KYC)"
+  },
+  "pages": [
+    {
+      "name": "basicInfo",
+      "title": {
+        "default": "Basic Information",
+        "vi": "Thông tin cơ bản"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "name": "fullName",
+          "title": {
+            "default": "Full Legal Name",
+            "vi": "Họ và tên đầy đủ theo pháp luật"
+          },
+          "placeholder": {
+            "default": "Enter your full legal name",
+            "vi": "Nhập tên đầy đủ theo pháp luật của bạn"
+          },
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "dateOfBirth",
+          "title": {
+            "default": "Date of Birth",
+            "vi": "Ngày sinh"
+          },
+          "inputType": "date",
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "name": "citizenship",
+          "title": {
+            "default": "Citizenship",
+            "vi": "Quốc tịch"
+          },
+          "choices": [
+            {
+              "value": "vn",
+              "text": {
+                "default": "Vietnamese",
+                "vi": "Việt Nam"
+              }
+            },
+            {
+              "value": "us",
+              "text": {
+                "default": "United States",
+                "vi": "Hoa Kỳ"
+              }
+            },
+            {
+              "value": "uk",
+              "text": {
+                "default": "United Kingdom",
+                "vi": "Vương quốc Anh"
+              }
+            },
+            {
+              "value": "other",
+              "text": {
+                "default": "Other",
+                "vi": "Khác"
+              }
+            }
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "idNumber",
+          "title": {
+            "default": "Identification Number",
+            "vi": "Số nhận dạng"
+          },
+          "placeholder": {
+            "default": "Passport, ID Card, or License Number",
+            "vi": "Số Hộ chiếu, Chứng minh thư hoặc Bằng lái xe"
+          },
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "name": "idType",
+          "title": {
+            "default": "Type of Identification",
+            "vi": "Loại nhận dạng"
+          },
+          "choices": [
+            {
+              "value": "passport",
+              "text": {
+                "default": "Passport",
+                "vi": "Hộ chiếu"
+              }
+            },
+            {
+              "value": "national_id",
+              "text": {
+                "default": "National ID Card",
+                "vi": "Chứng minh thư quốc gia"
+              }
+            },
+            {
+              "value": "drivers_license",
+              "text": {
+                "default": "Driver's License",
+                "vi": "Bằng lái xe"
+              }
+            }
+          ],
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "addressInfo",
+      "title": {
+        "default": "Address Information",
+        "vi": "Thông tin địa chỉ"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "name": "street",
+          "title": {
+            "default": "Street Address",
+            "vi": "Địa chỉ đường phố"
+          },
+          "placeholder": {
+            "default": "Enter your street address",
+            "vi": "Nhập địa chỉ đường phố của bạn"
+          },
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "city",
+          "title": {
+            "default": "City",
+            "vi": "Thành phố"
+          },
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "state",
+          "title": {
+            "default": "State/Province",
+            "vi": "Tiểu bang/Tỉnh"
+          },
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "zipCode",
+          "title": {
+            "default": "Postal Code",
+            "vi": "Mã bưu chính"
+          },
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "name": "country",
+          "title": {
+            "default": "Country",
+            "vi": "Quốc gia"
+          },
+          "choices": [
+            {
+              "value": "vn",
+              "text": {
+                "default": "Vietnam",
+                "vi": "Việt Nam"
+              }
+            },
+            {
+              "value": "us",
+              "text": {
+                "default": "United States",
+                "vi": "Hoa Kỳ"
+              }
+            },
+            {
+              "value": "uk",
+              "text": {
+                "default": "United Kingdom",
+                "vi": "Vương quốc Anh"
+              }
+            },
+            {
+              "value": "ca",
+              "text": {
+                "default": "Canada",
+                "vi": "Canada"
+              }
+            }
+          ],
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "financialInfo",
+      "title": {
+        "default": "Financial Information",
+        "vi": "Thông tin tài chính"
+      },
+      "elements": [
+        {
+          "type": "dropdown",
+          "name": "incomeRange",
+          "title": {
+            "default": "Annual Income Range",
+            "vi": "Phạm vi thu nhập hàng năm"
+          },
+          "choices": [
+            {
+              "value": "under_50k",
+              "text": {
+                "default": "Under $50,000",
+                "vi": "Dưới $50,000"
+              }
+            },
+            {
+              "value": "50k_100k",
+              "text": {
+                "default": "$50,000 - $100,000",
+                "vi": "$50,000 - $100,000"
+              }
+            },
+            {
+              "value": "100k_250k",
+              "text": {
+                "default": "$100,000 - $250,000",
+                "vi": "$100,000 - $250,000"
+              }
+            },
+            {
+              "value": "over_250k",
+              "text": {
+                "default": "Over $250,000",
+                "vi": "Trên $250,000"
+              }
+            }
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "name": "sourceOfFunds",
+          "title": {
+            "default": "Primary Source of Funds",
+            "vi": "Nguồn tiền chính"
+          },
+          "choices": [
+            {
+              "value": "employment",
+              "text": {
+                "default": "Employment",
+                "vi": "Việc làm"
+              }
+            },
+            {
+              "value": "business",
+              "text": {
+                "default": "Business",
+                "vi": "Kinh doanh"
+              }
+            },
+            {
+              "value": "investment",
+              "text": {
+                "default": "Investment",
+                "vi": "Đầu tư"
+              }
+            },
+            {
+              "value": "inheritance",
+              "text": {
+                "default": "Inheritance",
+                "vi": "Thừa kế"
+              }
+            }
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "checkbox",
+          "name": "confirmInfo",
+          "title": {
+            "default": "I confirm that the above information is true and correct",
+            "vi": "Tôi xác nhận rằng thông tin trên là chính xác và đúng sự thật"
+          },
+          "isRequired": true
+        }
+      ]
+    }
+  ]
+}

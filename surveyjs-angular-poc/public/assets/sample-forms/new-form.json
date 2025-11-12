@@ -1,0 +1,117 @@
+{
+  "title": {
+    "default": "New Form",
+    "vi": "Biểu mẫu mới"
+  },
+  "description": {
+    "default": "",
+    "vi": ""
+  },
+  "pages": [
+    {
+      "name": "page1",
+      "title": {
+        "default": "Page 1",
+        "vi": "Trang 1"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "name": "text_f2920a3f",
+          "title": {
+            "default": "Text Field",
+            "vi": "Trường văn bản"
+          },
+          "placeholder": {
+            "default": "Enter text",
+            "vi": "Nhập văn bản"
+          },
+          "isRequired": false,
+          "id": "70daa6f7-cb7a-40a0-9abe-3408b03b200f"
+        },
+        {
+          "type": "dropdown",
+          "name": "dropdown_911ae898",
+          "title": {
+            "default": "Dropdown",
+            "vi": "Danh sách thả xuống"
+          },
+          "choices": [
+            {
+              "value": "option1",
+              "text": {
+                "default": "Option 1",
+                "vi": "Tùy chọn 1"
+              }
+            },
+            {
+              "value": "option2",
+              "text": {
+                "default": "Option 2",
+                "vi": "Tùy chọn 2"
+              }
+            }
+          ],
+          "isRequired": false,
+          "id": "fe5a31bf-5437-4748-a6eb-9a0dd0f0fe66"
+        },
+        {
+          "type": "radiogroup",
+          "name": "radiogroup_21834d5d",
+          "title": {
+            "default": "Radio Buttons",
+            "vi": "Nút radio"
+          },
+          "choices": [
+            {
+              "value": "option1",
+              "text": {
+                "default": "Option 1",
+                "vi": "Tùy chọn 1"
+              }
+            },
+            {
+              "value": "option2",
+              "text": {
+                "default": "Option 2",
+                "vi": "Tùy chọn 2"
+              }
+            }
+          ],
+          "isRequired": false,
+          "id": "a717cc3c-b32b-4fec-9f80-07cfef89bdc8"
+        },
+        {
+          "type": "checkbox",
+          "name": "checkbox_7e775c63",
+          "title": {
+            "default": "Checkbox",
+            "vi": "Hộp kiểm"
+          },
+          "isRequired": false,
+          "id": "186d42d5-5314-436b-9b9c-58bd2f13535f"
+        }
+      ]
+    },
+    {
+      "name": "page2",
+      "title": {
+        "default": "Page 2",
+        "vi": "Trang 2"
+      },
+      "elements": [
+        {
+          "type": "date",
+          "name": "date_842acba1",
+          "title": {
+            "default": "Date",
+            "vi": "Ngày"
+          },
+          "isRequired": false,
+          "id": "eab7697c-1b92-4d17-8c33-d786db85afc5"
+        }
+      ]
+    }
+  ]
+
+}

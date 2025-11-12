@@ -1,30 +1,30 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormService, FormSchema } from '../../services/form.service';
-import * as Survey from 'survey-core';
+import { Model } from 'survey-core';
+import { SurveyModule } from 'survey-angular-ui';
 
 @Component({
   selector: 'app-form-renderer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SurveyModule],
   templateUrl: './form-renderer.component.html',
   styleUrls: ['./form-renderer.component.scss']
 })
 export class FormRendererComponent implements OnInit {
-  @ViewChild('surveyContainer', { static: false }) surveyContainer?: ElementRef;
-
   formId: string | null = null;
   formSchema: FormSchema | null = null;
   isLoading = false;
   error: string | null = null;
   isSubmitted = false;
   submittedData: any = null;
+  survey: Model | null = null;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private formService: FormService
+    public formService: FormService
   ) {}
 
   ngOnInit(): void {
@@ -44,7 +44,7 @@ export class FormRendererComponent implements OnInit {
       next: (schema) => {
         this.formSchema = schema;
         this.isLoading = false;
-        this.initializeSurvey(schema);
+        this.createSurvey(schema);
       },
       error: (err) => {
         this.error = `Failed to load form: ${err.message}`;
@@ -54,30 +54,23 @@ export class FormRendererComponent implements OnInit {
     });
   }
 
-  initializeSurvey(schema: FormSchema): void {
-    if (!this.surveyContainer) {
-      return;
-    }
-
+  createSurvey(schema: FormSchema): void {
     const currentLocale = this.formService.getCurrentLocale();
 
-    // Create survey model
-    const survey = new Survey.Model(schema);
+    // Create survey model using SurveyJS
+    this.survey = new Model(schema);
 
     // Set current language
     if (currentLocale !== 'default') {
-      survey.locale = currentLocale;
+      this.survey.locale = currentLocale;
     }
 
     // Handle survey completion
-    survey.onComplete.add((result: any) => {
+    this.survey.onComplete.add((result: any) => {
       this.handleFormSubmission(result);
     });
 
-    // Render survey
-    const container = this.surveyContainer.nativeElement;
-    container.innerHTML = '';
-    survey.render(container);
+    console.log('Survey created successfully');
   }
 
   handleFormSubmission(result: any): void {

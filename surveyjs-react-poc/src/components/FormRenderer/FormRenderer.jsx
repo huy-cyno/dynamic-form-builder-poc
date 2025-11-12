@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Survey } from 'survey-react-ui';
-import 'survey-core/defaultV2.min.css';
+import { Model } from 'survey-core';
+import 'survey-core/survey-core.min.css';
 import { useFormLoader } from '../../hooks/useFormLoader';
 import { useFormSubmission } from '../../hooks/useFormSubmission';
 import { useLocale } from '../../hooks/useLocale';
@@ -12,30 +13,30 @@ export const FormRenderer = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const formId = searchParams.get('id');
+  const [survey, setSurvey] = useState(null);
 
   const { form, isLoading, error } = useFormLoader(formId);
   const { submitForm, isSubmitting, submittedData, clearSubmittedData } = useFormSubmission();
   const { getTranslation } = useLocale();
-  const surveyRef = useRef(null);
 
   useEffect(() => {
     if (form) {
       // Create survey model
-      const survey = new Survey.Model(form);
+      const newSurvey = new Model(form);
 
       // Set current language
       const currentLocale = formService.getCurrentLocale();
       if (currentLocale !== 'default') {
-        survey.locale = currentLocale;
+        newSurvey.locale = currentLocale;
       }
 
       // Handle survey completion
-      survey.onComplete.add((result) => {
+      newSurvey.onComplete.add((result) => {
         handleFormSubmission(result);
       });
 
-      // Render survey
-      survey.render(surveyRef.current);
+      // Store survey in state for React rendering
+      setSurvey(newSurvey);
     }
   }, [form]);
 
@@ -84,9 +85,9 @@ export const FormRenderer = () => {
         </div>
       )}
 
-      {!isLoading && !error && !submittedData && (
+      {!isLoading && !error && !submittedData && survey && (
         <div className={styles.formWrapper}>
-          <div ref={surveyRef} className={styles.surveyContainer}></div>
+          <Survey model={survey} />
         </div>
       )}
 

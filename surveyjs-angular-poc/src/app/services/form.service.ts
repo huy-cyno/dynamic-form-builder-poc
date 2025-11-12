@@ -49,6 +49,18 @@ export class FormService {
         default: 'Know Your Customer (KYC) verification form',
         vi: 'Mẫu xác minh Biết khách hàng của bạn (KYC)'
       }
+    },
+    {
+      id: 'new-form',
+      name: 'new-form',
+      title: {
+        default: 'New Form',
+        vi: 'Biểu mẫu mới'
+      },
+      description: {
+        default: '',
+        vi: ''
+      }
     }
   ];
 

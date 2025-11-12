@@ -1,0 +1,219 @@
+{
+  "title": {
+    "default": "Customer Questionnaire",
+    "vi": "Bảng câu hỏi khách hàng"
+  },
+  "description": {
+    "default": "Please fill out this questionnaire to help us serve you better",
+    "vi": "Vui lòng điền vào bảng câu hỏi này để giúp chúng tôi phục vụ bạn tốt hơn"
+  },
+  "pages": [
+    {
+      "name": "personalInfo",
+      "title": {
+        "default": "Personal Information",
+        "vi": "Thông tin cá nhân"
+      },
+      "elements": [
+        {
+          "type": "text",
+          "name": "firstName",
+          "title": {
+            "default": "First Name",
+            "vi": "Tên"
+          },
+          "placeholder": {
+            "default": "Enter your first name",
+            "vi": "Nhập tên của bạn"
+          },
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "lastName",
+          "title": {
+            "default": "Last Name",
+            "vi": "Họ"
+          },
+          "placeholder": {
+            "default": "Enter your last name",
+            "vi": "Nhập họ của bạn"
+          },
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "title": {
+            "default": "Email Address",
+            "vi": "Địa chỉ email"
+          },
+          "placeholder": {
+            "default": "Enter your email",
+            "vi": "Nhập email của bạn"
+          },
+          "inputType": "email",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "phone",
+          "title": {
+            "default": "Phone Number",
+            "vi": "Số điện thoại"
+          },
+          "placeholder": {
+            "default": "Enter your phone number",
+            "vi": "Nhập số điện thoại của bạn"
+          },
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "name": "locationInfo",
+      "title": {
+        "default": "Location Information",
+        "vi": "Thông tin vị trí"
+      },
+      "elements": [
+        {
+          "type": "dropdown",
+          "name": "country",
+          "title": {
+            "default": "Country",
+            "vi": "Quốc gia"
+          },
+          "choices": [
+            {
+              "value": "usa",
+              "text": {
+                "default": "United States",
+                "vi": "Hoa Kỳ"
+              }
+            },
+            {
+              "value": "vietnam",
+              "text": {
+                "default": "Vietnam",
+                "vi": "Việt Nam"
+              }
+            },
+            {
+              "value": "uk",
+              "text": {
+                "default": "United Kingdom",
+                "vi": "Vương quốc Anh"
+              }
+            },
+            {
+              "value": "canada",
+              "text": {
+                "default": "Canada",
+                "vi": "Canada"
+              }
+            },
+            {
+              "value": "australia",
+              "text": {
+                "default": "Australia",
+                "vi": "Úc"
+              }
+            }
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "city",
+          "title": {
+            "default": "City",
+            "vi": "Thành phố"
+          },
+          "placeholder": {
+            "default": "Enter your city",
+            "vi": "Nhập thành phố của bạn"
+          },
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "zipCode",
+          "title": {
+            "default": "Zip Code",
+            "vi": "Mã bưu chính"
+          },
+          "placeholder": {
+            "default": "Enter your zip code",
+            "vi": "Nhập mã bưu chính của bạn"
+          },
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "name": "preferences",
+      "title": {
+        "default": "Preferences",
+        "vi": "Sở thích"
+      },
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "contactPreference",
+          "title": {
+            "default": "Preferred Contact Method",
+            "vi": "Phương thức liên hệ ưu tiên"
+          },
+          "choices": [
+            {
+              "value": "email",
+              "text": {
+                "default": "Email",
+                "vi": "Email"
+              }
+            },
+            {
+              "value": "phone",
+              "text": {
+                "default": "Phone",
+                "vi": "Điện thoại"
+              }
+            },
+            {
+              "value": "sms",
+              "text": {
+                "default": "SMS",
+                "vi": "SMS"
+              }
+            }
+          ],
+          "isRequired": true
+        },
+        {
+          "type": "checkbox",
+          "name": "newsletter",
+          "title": {
+            "default": "Subscribe to our newsletter",
+            "vi": "Đăng ký nhận bản tin của chúng tôi"
+          },
+          "isRequired": false
+        },
+        {
+          "type": "comment",
+          "name": "comments",
+          "title": {
+            "default": "Additional Comments",
+            "vi": "Nhận xét bổ sung"
+          },
+          "placeholder": {
+            "default": "Any additional comments or suggestions",
+            "vi": "Bất kỳ nhận xét hoặc đề xuất bổ sung nào"
+          },
+          "rows": 4,
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}
