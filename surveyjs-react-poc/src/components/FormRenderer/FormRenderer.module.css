@@ -1,0 +1,215 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px 20px;
+}
+
+.header {
+  max-width: 900px;
+  margin: 0 auto 30px;
+}
+
+.btnBack {
+  background: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.btnBack:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+  color: white;
+  font-size: 2.5em;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.loadingSpinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: white;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingSpinner p {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.errorMessage {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  background: #ff6b6b;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+}
+
+.errorIcon {
+  margin-right: 10px;
+  font-size: 1.5em;
+}
+
+.formWrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.surveyContainer {
+  padding: 40px;
+}
+
+.successMessage {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.successContent {
+  text-align: center;
+}
+
+.successIcon {
+  font-size: 4em;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.successContent h2 {
+  color: #667eea;
+  font-size: 2em;
+  margin: 0 0 10px;
+}
+
+.successContent > p {
+  color: #666;
+  font-size: 1.1em;
+  margin: 0 0 30px;
+}
+
+.submittedData {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 30px 0;
+  text-align: left;
+}
+
+.submittedData h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.submittedData pre {
+  overflow-x: auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid #667eea;
+  color: #333;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnPrimary {
+  background: #667eea;
+  color: white;
+}
+
+.btnPrimary:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btnSecondary {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btnSecondary:hover {
+  background: #d0d0d0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 10px;
+  }
+
+  .title {
+    font-size: 1.5em;
+  }
+
+  .successMessage {
+    padding: 30px 20px;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

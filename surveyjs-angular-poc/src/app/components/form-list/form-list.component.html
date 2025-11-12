@@ -1,0 +1,67 @@
+<div class="form-list-container">
+  <header class="app-header">
+    <div class="header-content">
+      <div class="logo-section">
+        <h1 class="app-title">📋 Form Builder POC</h1>
+        <p class="subtitle">SurveyJS with Angular</p>
+      </div>
+      <div class="language-switcher">
+        <span class="label">Language:</span>
+        <div class="locale-buttons">
+          <button
+            *ngFor="let locale of availableLocales"
+            [class.active]="currentLocale === locale.code"
+            (click)="switchLanguage(locale.code)"
+            class="locale-btn"
+          >
+            {{ locale.label }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="forms-container">
+      <h2 class="section-title">
+        {{ currentLocale === 'vi' ? 'Danh sách biểu mẫu' : 'Available Forms' }}
+      </h2>
+
+      <div *ngIf="isLoading" class="loading-message">
+        <div class="spinner"></div>
+        <p>{{ currentLocale === 'vi' ? 'Đang tải...' : 'Loading...' }}</p>
+      </div>
+
+      <div *ngIf="!isLoading && forms.length === 0" class="empty-message">
+        <p>{{ currentLocale === 'vi' ? 'Không có biểu mẫu nào' : 'No forms available' }}</p>
+      </div>
+
+      <div *ngIf="!isLoading && forms.length > 0" class="forms-grid">
+        <div
+          *ngFor="let form of forms"
+          class="form-card"
+          (click)="openForm(form.id)"
+        >
+          <div class="card-header">
+            <span class="form-icon">📝</span>
+            <h3 class="form-title">{{ getLocalizedTitle(form) }}</h3>
+          </div>
+          <p class="form-description">{{ getLocalizedDescription(form) }}</p>
+          <div class="card-footer">
+            <button class="btn-open">
+              {{ currentLocale === 'vi' ? 'Mở biểu mẫu' : 'Open Form' }} →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <p>
+      {{ currentLocale === 'vi'
+        ? 'Hệ thống xây dựng biểu mẫu động với SurveyJS và Angular'
+        : 'Dynamic Form Builder System with SurveyJS and Angular' }}
+    </p>
+  </footer>
+</div>

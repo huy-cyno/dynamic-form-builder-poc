@@ -1,0 +1,40 @@
+<div class="form-renderer-container">
+  <div class="form-header">
+    <button class="btn-back" (click)="goBack()">← Back to Forms</button>
+    <h1 *ngIf="formSchema" class="form-title">
+      {{ formService.getTranslation(formSchema.title) }}
+    </h1>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-spinner">
+    <div class="spinner"></div>
+    <p>Loading form...</p>
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    <span class="error-icon">⚠️</span>
+    {{ error }}
+  </div>
+
+  <div *ngIf="!isLoading && !error && !isSubmitted" class="form-wrapper">
+    <div #surveyContainer class="survey-container"></div>
+  </div>
+
+  <div *ngIf="isSubmitted" class="success-message">
+    <div class="success-content">
+      <span class="success-icon">✓</span>
+      <h2>Form Submitted Successfully!</h2>
+      <p>Thank you for completing the form. Your information has been recorded.</p>
+
+      <div class="submitted-data">
+        <h3>Submitted Data:</h3>
+        <pre>{{ submittedData | json }}</pre>
+      </div>
+
+      <div class="button-group">
+        <button class="btn btn-primary" (click)="startOver()">Fill Another Form</button>
+        <button class="btn btn-secondary" (click)="goBack()">Back to Forms</button>
+      </div>
+    </div>
+  </div>
+</div>

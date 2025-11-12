@@ -1,0 +1,262 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+}
+
+.header {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px 0;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logoSection {
+  flex: 1;
+  min-width: 250px;
+}
+
+.appTitle {
+  margin: 0;
+  font-size: 2em;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+  margin: 5px 0 0;
+  opacity: 0.9;
+  font-size: 0.95em;
+}
+
+.languageSwitcher {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.label {
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.localeButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.localeBtn {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  padding: 6px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+}
+
+.localeBtn:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.localeBtn.active {
+  background: white;
+  color: #667eea;
+  border-color: white;
+}
+
+.mainContent {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.formsContainer {
+  width: 100%;
+}
+
+.sectionTitle {
+  color: white;
+  font-size: 2em;
+  margin: 0 0 40px;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.loadingMessage,
+.emptyMessage {
+  text-align: center;
+  color: white;
+  padding: 40px;
+  font-size: 1.1em;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.formsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.formCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.formCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.formCard:hover .btnOpen {
+  background: #667eea;
+  color: white;
+  transform: translateX(5px);
+}
+
+.cardHeader {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.formIcon {
+  font-size: 2em;
+}
+
+.formTitle {
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.formDescription {
+  flex: 1;
+  padding: 20px;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+.cardFooter {
+  padding: 20px;
+  border-top: 1px solid #eee;
+}
+
+.btnOpen {
+  width: 100%;
+  background: #f0f0f0;
+  border: none;
+  color: #333;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95em;
+}
+
+.btnOpen:hover {
+  background: #667eea;
+  color: white;
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.1);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  opacity: 0.8;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.95em;
+}
+
+@media (max-width: 768px) {
+  .headerContent {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .logoSection {
+    width: 100%;
+  }
+
+  .appTitle {
+    font-size: 1.5em;
+  }
+
+  .languageSwitcher {
+    justify-content: space-between;
+  }
+
+  .mainContent {
+    padding: 30px 15px;
+  }
+
+  .sectionTitle {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+  }
+
+  .formsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

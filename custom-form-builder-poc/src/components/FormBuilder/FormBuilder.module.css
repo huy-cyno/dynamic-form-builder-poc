@@ -1,0 +1,247 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f5f5f5;
+}
+
+.header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.headerContent {
+  margin-bottom: 15px;
+}
+
+.title {
+  margin: 0 0 5px 0;
+  font-size: 1.8em;
+  color: #333;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.95em;
+  color: #666;
+}
+
+.formTitleSection {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.formTitleInput {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 0.95em;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.formTitleInput:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btnToolbar {
+  padding: 8px 16px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: all 0.2s ease;
+}
+
+.btnToolbar:hover {
+  background: #5568d3;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.btnToolbar.btnDanger {
+  background: #ff6b6b;
+}
+
+.btnToolbar.btnDanger:hover {
+  background: #ff5252;
+}
+
+.pageTabs {
+  display: flex;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+  overflow-x: auto;
+  align-items: center;
+}
+
+.pageTabItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pageTab {
+  padding: 8px 16px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pageTab:hover {
+  border-color: #667eea;
+  background: #f0f4ff;
+}
+
+.pageTab.active {
+  background: white;
+  border-color: #667eea;
+  border-bottom: 2px solid white;
+}
+
+.pageTabTitle {
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 0.95em;
+  color: #333;
+  max-width: 100px;
+  text-overflow: ellipsis;
+}
+
+.pageTabTitle:focus {
+  outline: none;
+  border-bottom: 1px solid #667eea;
+}
+
+.pageNum {
+  font-size: 0.8em;
+  color: #999;
+}
+
+.btnDeletePage {
+  padding: 4px 8px;
+  background: transparent;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.btnDeletePage:hover {
+  color: #ff6b6b;
+  background: #ffebee;
+  border-radius: 4px;
+}
+
+.btnAddPage {
+  padding: 8px 16px;
+  background: #f0f0f0;
+  border: 2px dashed #999;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #666;
+  transition: all 0.2s ease;
+}
+
+.btnAddPage:hover {
+  background: #e8eef7;
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  gap: 0;
+}
+
+.sidebar {
+  width: 280px;
+  background: white;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.canvas {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.jsonPreview {
+  width: 100%;
+  height: 300px;
+  border-top: 1px solid #e0e0e0;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 250px;
+  }
+
+  .formTitleSection {
+    flex-direction: column;
+  }
+
+  .toolbar {
+    gap: 8px;
+  }
+
+  .btnToolbar {
+    padding: 6px 12px;
+    font-size: 0.85em;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .content {
+    overflow-x: auto;
+  }
+
+  .toolbar {
+    flex-direction: column;
+  }
+
+  .btnToolbar {
+    width: 100%;
+  }
+
+  .pageTabs {
+    padding: 8px 12px;
+  }
+}
